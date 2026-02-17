@@ -25,9 +25,9 @@
     Advanced: 'accent'
   };
 
-  const totalLessons = course.modules.reduce((sum, mod) => sum + mod.lessons.length, 0);
+  let totalLessons = $derived(course.modules.reduce((sum, mod) => sum + mod.lessons.length, 0));
 
-  const courseSchema = {
+  let courseSchema = $derived({
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: course.title,
@@ -47,7 +47,7 @@
     educationalLevel: course.level,
     timeRequired: course.duration,
     numberOfCredits: course.modules.length
-  };
+  });
 </script>
 
 <SEOHead
