@@ -520,8 +520,9 @@ hr {
 /* --- Glass Panel --- */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
+  /* Vendor prefix must come before standard property for proper CSS cascade */
   -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   border: var(--border-width-thin) solid var(--glass-border);
   border-radius: var(--radius-lg);
 }
@@ -577,6 +578,7 @@ hr {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property for future browser support */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -584,6 +586,7 @@ hr {
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3; /* Standard property for future browser support */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
